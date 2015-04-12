@@ -4,8 +4,11 @@
 rm polar.tcx
 rm tcx.zip
 
+# Source config
+source polar-to-runkeeper.config
+
 # Login and download cookie
-curl -d "returnUrl=https%3A%2F%2Fflow.polar.com%2F&email=$2&password=$3" --cookie polarcookie.txt --cookie-jar polarcookie.txt https://flow.polar.com/login
+curl -d "returnUrl=https%3A%2F%2Fflow.polar.com%2F&email=$POLAR_EMAIL&password=$POLAR_PASSWORD" --cookie polarcookie.txt --cookie-jar polarcookie.txt https://flow.polar.com/login
 
 # Get trainings as JSON from today
 #today=`date +%d.%m.%Y`
@@ -19,4 +22,4 @@ curl -o tcx.zip --cookie polarcookie.txt "https://flow.polar.com/training/analys
 unzip -l -o -p tcx.zip *.tcx > polar.tcx
 
 echo "Uploading training to Runkeeper"
-java -jar target/runkeeper-client-0.0.1-SNAPSHOT.jar -upload polar.tcx -a $4
+java -jar target/runkeeper-client-0.0.1-SNAPSHOT.jar -upload polar.tcx -a $RUNKEEPR_ACCESS_TOKEN
