@@ -80,7 +80,7 @@ public class TcxTransformer {
 		// duration: 3292.432
 		DateFormat dateFormat = new SimpleDateFormat("EEE, d MMM yyyy HH:mm:s", Locale.US);
 		DateTime start = new DateTime(startTime.toGregorianCalendar().getTime());
-		activity.setStart_time(dateFormat.format(start.minusHours(2).getMillis()));
+		activity.setStart_time(dateFormat.format(start.getMillis()));
 		activity.setType("Running");
 		activity.setDetect_pauses(Boolean.TRUE);
 		activity.setTotal_distance(totalDistance);
