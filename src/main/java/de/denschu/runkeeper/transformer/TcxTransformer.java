@@ -57,16 +57,22 @@ public class TcxTransformer {
 						}else{
 							continue;
 						}
-						wgs84.setAltitude(trackpoint.getAltitudeMeters());
+						if(trackpoint.getAltitudeMeters() != null){
+							wgs84.setAltitude(trackpoint.getAltitudeMeters());
+						}else{
+							wgs84.setAltitude(0d);
+						}
 						XMLGregorianCalendar time = trackpoint.getTime();
 						long timestampInMillis = time.toGregorianCalendar().getTimeInMillis();
 						Double seconds = Double.valueOf(timestampInMillis - startTimeInMillis) / 1000;
 						wgs84.setTimestamp(seconds);
 						wgs84.setType("gps");
-						HeartRate heartrate = new HeartRate();
-						heartrate.setHeart_rate(Short.valueOf(trackpoint.getHeartRateBpm().getValue()).intValue());
-						heartrate.setTimestamp(seconds);
-						heartRateList.add(heartrate);
+						if(trackpoint.getHeartRateBpm() != null){
+							HeartRate heartrate = new HeartRate();
+							heartrate.setHeart_rate(Short.valueOf(trackpoint.getHeartRateBpm().getValue()).intValue());
+							heartrate.setTimestamp(seconds);
+							heartRateList.add(heartrate);							
+						}
 						wgs84List.add(wgs84);
 					}
 				}

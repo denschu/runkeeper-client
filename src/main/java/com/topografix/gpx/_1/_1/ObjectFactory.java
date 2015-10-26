@@ -2,7 +2,7 @@
 // Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.7 generiert 
 // Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2015.04.11 um 03:32:00 PM CEST 
+// Generiert: 2015.10.26 um 08:16:51 PM CET 
 //
 
 
@@ -49,11 +49,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link WptType }
+     * Create an instance of {@link TrkType }
      * 
      */
-    public WptType createWptType() {
-        return new WptType();
+    public TrkType createTrkType() {
+        return new TrkType();
     }
 
     /**
@@ -73,59 +73,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link LinkType }
-     * 
-     */
-    public LinkType createLinkType() {
-        return new LinkType();
-    }
-
-    /**
-     * Create an instance of {@link MetadataType }
-     * 
-     */
-    public MetadataType createMetadataType() {
-        return new MetadataType();
-    }
-
-    /**
-     * Create an instance of {@link ExtensionsType }
-     * 
-     */
-    public ExtensionsType createExtensionsType() {
-        return new ExtensionsType();
-    }
-
-    /**
      * Create an instance of {@link RteType }
      * 
      */
     public RteType createRteType() {
         return new RteType();
-    }
-
-    /**
-     * Create an instance of {@link EmailType }
-     * 
-     */
-    public EmailType createEmailType() {
-        return new EmailType();
-    }
-
-    /**
-     * Create an instance of {@link PtsegType }
-     * 
-     */
-    public PtsegType createPtsegType() {
-        return new PtsegType();
-    }
-
-    /**
-     * Create an instance of {@link PtType }
-     * 
-     */
-    public PtType createPtType() {
-        return new PtType();
     }
 
     /**
@@ -137,6 +89,54 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link EmailType }
+     * 
+     */
+    public EmailType createEmailType() {
+        return new EmailType();
+    }
+
+    /**
+     * Create an instance of {@link PtType }
+     * 
+     */
+    public PtType createPtType() {
+        return new PtType();
+    }
+
+    /**
+     * Create an instance of {@link PtsegType }
+     * 
+     */
+    public PtsegType createPtsegType() {
+        return new PtsegType();
+    }
+
+    /**
+     * Create an instance of {@link LinkType }
+     * 
+     */
+    public LinkType createLinkType() {
+        return new LinkType();
+    }
+
+    /**
+     * Create an instance of {@link WptType }
+     * 
+     */
+    public WptType createWptType() {
+        return new WptType();
+    }
+
+    /**
+     * Create an instance of {@link ExtensionsType }
+     * 
+     */
+    public ExtensionsType createExtensionsType() {
+        return new ExtensionsType();
+    }
+
+    /**
      * Create an instance of {@link PersonType }
      * 
      */
@@ -145,11 +145,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link TrkType }
+     * Create an instance of {@link MetadataType }
      * 
      */
-    public TrkType createTrkType() {
-        return new TrkType();
+    public MetadataType createMetadataType() {
+        return new MetadataType();
     }
 
     /**

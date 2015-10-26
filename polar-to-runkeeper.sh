@@ -16,7 +16,7 @@ curl -d "returnUrl=https%3A%2F%2Fflow.polar.com%2F&email=$POLAR_EMAIL&password=$
 #curl --cookie polarcookie.txt "https://flow.polar.com/training/getCalendarEvents?start=$today&end=$today"
 
 echo "Downloading training from Polar Flow"
-curl -o tcx.zip --cookie polarcookie.txt "https://flow.polar.com/training/analysis/$1/export/tcx"
+curl -o tcx.zip --cookie polarcookie.txt "https://flow.polar.com/training/analysis/$1/export/tcx/true"
 
 # Unzip archive 
 unzip -l -o -p tcx.zip *.tcx > polar.tcx

@@ -53,7 +53,14 @@ abstract public class AbstractService {
 			conn.setRequestProperty("Content-Type",contentType);
 			conn.getOutputStream().write(value.getBytes());
 			if (conn.getResponseCode() != 201) {
-				throw new IOException(conn.getResponseCode() + " "+ conn.getResponseMessage());
+				BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(conn.getErrorStream()));
+				String response = "";
+                String message;
+                while ((message = bufferedReader.readLine()) != null){
+                    response += message;
+                }
+				throw new IOException(conn.getResponseCode() + " "+ conn.getResponseMessage() + " " 
+						+ response);
 			}
 		} finally {
 			conn.disconnect();
